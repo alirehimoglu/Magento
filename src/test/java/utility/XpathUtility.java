@@ -16,6 +16,10 @@ public class XpathUtility {
     public static final String addNewCustomerButton = "(//*[text()=\"Add New Customer\"])[1]";
     public static final String resetFilterButton = "//*[@id=\"id_572051a64f93bd83c171502975828352\"]";
     public static final String searchButton = "//*[@id=\"id_4014cb60d4954d65845677f497b80dec\"]";
+
+    private static String customerEmail;
+    public static final String customerEditButton = "(//td[text()[normalize-space()='" + customerEmail + "']]/following::td[@class=' last']//a)[1]";
+
     public static final String nameSearchBox = "//*[@id=\"customerGrid_filter_name\"]";
     public static final String emailSearchBox = "//*[@id=\"customerGrid_filter_email\"]";
     public static final String telephoneSearchBox = "//*[@id=\"customerGrid_filter_Telephone\"]";
