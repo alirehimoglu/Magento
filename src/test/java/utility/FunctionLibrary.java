@@ -2,6 +2,7 @@ package utility;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,8 +12,11 @@ public class FunctionLibrary {
 
     ChromeDriver driver;
 
+    Actions actions;
+
     public FunctionLibrary(ChromeDriver driver) {
         this.driver = driver;
+        actions = new Actions(driver);
     }
 
     public void waitForElementPresent(WebElement element){
@@ -26,6 +30,14 @@ public class FunctionLibrary {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void moveToElement(WebElement element){
+        actions.moveToElement(element).build().perform();
+    }
+
+    public void scrollToElement(WebElement element){
+        actions.scrollToElement(element);
     }
 
 
