@@ -1,10 +1,10 @@
-package utility;
+package utils;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
 
-public class ApiUtility {
+public class ApiUtil {
 
     public static void apiGetMethod(String apiUsername, String apiPassword, String apiUrl, String endPoint, int responseCode){
 
