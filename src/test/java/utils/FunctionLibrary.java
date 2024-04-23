@@ -1,4 +1,4 @@
-package utility;
+package utils;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;

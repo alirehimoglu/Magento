@@ -1,4 +1,4 @@
-package utility;
+package utils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,7 +14,7 @@ public class ConfigReader {
         FileInputStream inputStream = null;
 
         try {
-            inputStream = new FileInputStream("config.properties");
+            inputStream = new FileInputStream("src/test/resources/config.properties");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

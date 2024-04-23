@@ -1,6 +1,6 @@
-package utility;
+package utils;
 
-public class XpathUtility {
+public class XpathUtil {
 
     // Login
     public static final String usernameField = "//*[@id=\"username\"]";
