@@ -24,8 +24,8 @@ public class BaseTest {
         log.info("Environment ::"+URL);
         Driver.getDriver().get(URL);
         log.info("Starting browser");
-        UiUtil.getElement(XpathUtil.usernameField).sendKeys(ConfigReader.readFromConfig("customerusername"));
-        UiUtil.getElement(XpathUtil.passwordField).sendKeys(ConfigReader.readFromConfig("customerpassword"));
+        UiUtil.getElement(XpathUtil.customerUsernameField).sendKeys(ConfigReader.readFromConfig("customerUsername"));
+        UiUtil.getElement(XpathUtil.passwordField).sendKeys(ConfigReader.readFromConfig("password"));
         UiUtil.clickElement(XpathUtil.loginButton);
         log.info("logging into app");
     }
