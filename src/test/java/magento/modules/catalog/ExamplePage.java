@@ -1,4 +1,4 @@
 package magento.modules.catalog;
 
-public class examplePage {
+public class ExamplePage {
 }

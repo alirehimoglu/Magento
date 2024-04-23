@@ -1,4 +1,4 @@
 package magento.modules.marketing;
 
-public class marketingPage {
+public class MarketingPage {
 }

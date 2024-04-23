@@ -1,4 +1,4 @@
 package magento.modules.base;
 
-public class basePage {
+public class BasePage {
 }
