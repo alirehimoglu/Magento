@@ -1,4 +1,4 @@
 package magento.modules.customer;
 
-public class customerPage {
+public class CustomerPage {
 }

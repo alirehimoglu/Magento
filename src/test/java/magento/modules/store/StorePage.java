@@ -1,4 +1,4 @@
 package magento.modules.store;
 
-public class storePage {
+public class StorePage {
 }

@@ -1,4 +1,4 @@
 package magento.modules.sales;
 
-public class salesPage {
+public class SalesPage {
 }
