@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    public static String readFromConfig(String key){
+    public static String readFromConfig(String key) {
 
         Properties properties = new Properties();
 
@@ -30,7 +30,7 @@ public class ConfigReader {
 
     }
 
-    public static String readFromConfigWithFileName(String fileName, String key){
+    public static String readFromConfigWithFileName(String fileName, String key) {
 
         Properties properties = new Properties();
 
@@ -54,5 +54,18 @@ public class ConfigReader {
 
     }
 
+/*    public class ConfigReader2 {
 
+        private static Properties properties = new Properties();
+
+        static {
+            try {
+                FileInputStream file = new FileInputStream("src/test/resources/config.properties");
+                properties.load(file);
+                file.close();
+            } catch (IOException e) {
+                System.out.println("Properties file not found");
+            }
+        }
+    }*/
 }
