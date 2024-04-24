@@ -32,6 +32,28 @@ public class XpathUtil {
     public static final String saveAndContinueEditButton="//*[@id='id_3601349b172a9082be048ce0d60cbe53']/following::span[7]";
     public static final String addCustomersSuccessMessage="//*[text()='The customer has been saved.']";
 
+    //**************************************************************************************************************************
+    // Store Module
+    public static final String ordersUnderSales= "//ul[@id='nav']//li[@class='parent level0']";
+    public static final String createNewOrderButton= "//button[@title='Create New Order'][not(ancestor::div[contains(@class,'content-header-floating')])]";
+    public static final String storeEmailField= "//input[@name='email']";
+    public static final String searchButton= "//td[@class='filter-actions a-right']//button[@type='button'][2]//span//span//span['Search']";
+    public static final String correctCustomer= "//table[@class='data']//tr[@title='287']";
+    public static final String carButton= "//div[@class='fieldset']//input[@id='store_13']";
+    public static final String billingAddressFirstNameField= "//fieldset[@class='np']//input[@id='order-billing_address_firstname']";
+    public static final String billingAddressLastNameFiled= "//fieldset[@class='np']//input[@id='order-billing_address_lastname']";
+    public static final String billingAddressStreetAddressField= "//fieldset[@class='np']//input[@id='order-billing_address_street0']";
+    public static final String billingAddressCityField= "//fieldset[@class='np']//input[@id='order-billing_address_city']";
+    public static final String billingAddressPostalCodeField= "//fieldset[@class='np']//input[@id='order-billing_address_postcode']";
+    public static final String billingAddressTelephoneField= "//fieldset[@class='np']//input[@id='order-billing_address_telephone']";
+    public static final String addProductsButton= "//div[@id='order-items']//span['Add Products']";
+    public static final String productNameField= "//table[@id='sales_order_create_search_grid_table']//tr[@class='filter']//th[2]//div//input[@name='name']";
+    public static final String searchProductButton= "//button[@id='id_b9838c292187bc65c4ff5f618d5f3c2b']";
+
+
+
+
+
 
 
 }
