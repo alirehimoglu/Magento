@@ -1,9 +1,10 @@
 package utils;
 
 import net.datafaker.Faker;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.joda.time.format.DateTimeFormatter;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -11,7 +12,13 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Driver;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+import org.openqa.selenium.TakesScreenshot;
 import java.util.List;
 import java.util.Random;
 
@@ -104,10 +111,29 @@ public class UiUtil {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    public void waitForAlertPresent(){
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(7));
+
+    }
+
     public void wait_(int second){
         try {
             Thread.sleep(second * 1000);
         } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void takeScreenShot(String fileName, ChromeDriver driver ){
+        DateTime dateTime= new DateTime();
+        DateTimeFormatter formatter= DateTimeFormat.forPattern("yy-MM-dd-HH-mm");
+        String timeStamp= dateTime.toString(formatter);
+        fileName= fileName+"_"+timeStamp;
+        File imageFile= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        String imageFolder="screenshoots";
+        try {
+            FileUtils.copyFile(imageFile,new File(imageFolder+File.separator+fileName+".png"));
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
