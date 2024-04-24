@@ -1,5 +1,7 @@
 package utils;
 
+import net.datafaker.providers.base.Marketing;
+
 public class XpathUtil {
 
 //login credential
@@ -71,8 +73,24 @@ public class XpathUtil {
     public static final String taxClass="//*[@id='tax_class_id']";
     public static final String theProductHasBeenSaved="//*[text()='The product has been saved.']";
 
-
-
+    // ========================================================================================================
+    // Marketing Module Xpath
+    public static final String promotionsTab = "//*[text()='Promotions']";
+    public static final String catalogPriceRulesLink = "//*[text()='Catalog Price Rules']";
+    public static final String addNewRuleButton = "//*[text()='Add New Rule']";
+    public static final String ruleNameField = "//*[@id=\"rule_name\"]";
+    public static final String descriptionField = "//*[@id=\"rule_description\"]";
+    public static final String statusSelect = "//*[@id=\"rule_is_active\"]";
+    public static final String websiteSelect = "//*[@id=\"rule_website_ids\"]";
+    public static final String customerGroupsSelect = "//*[@id=\"rule_customer_group_ids\"]";
+    public static final String fromDateField = "//*[@id=\"rule_from_date\"]";
+    public static final String toDateField = "//*[@id=\"rule_to_date\"]";
+    public static final String priorityField = "//*[@id=\"rule_sort_order\"]";
+    public static final String saveButton = "//*[@id=\"id_925ad6cc24ed65daa76ad943dcbf34b6\"]";
+    public static final String saveAndApplyButton = "//*[@id=\"id_66bc65c929a3a017b17933b3da5c6cb1\"]";
+    public static final String ResetButton = "//*[@id=\"id_2e6ac8017ffcc4fe6e22c1f9a76f6cc9\"]";
+    public static final String backButton = "//*[@id=\"id_26787021ac0cdd0bae5220dcc586436c\"]";
+    public static final String SaveAndContinueEditButton = "//*[@id=\"id_dc6d6131efbbb79dc89132653d289d1d\"]";
 
 
 }
