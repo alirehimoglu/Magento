@@ -75,6 +75,7 @@ public class XpathUtil {
 
     // ========================================================================================================
     // Marketing Module Xpath
+    // Case_1
     public static final String promotionsTab = "//*[text()='Promotions']";
     public static final String catalogPriceRulesLink = "//*[text()='Catalog Price Rules']";
     public static final String addNewRuleButton = "//*[text()='Add New Rule']";
@@ -91,6 +92,26 @@ public class XpathUtil {
     public static final String ResetButton = "//*[@id=\"id_2e6ac8017ffcc4fe6e22c1f9a76f6cc9\"]";
     public static final String backButton = "//*[@id=\"id_26787021ac0cdd0bae5220dcc586436c\"]";
     public static final String SaveAndContinueEditButton = "//*[@id=\"id_dc6d6131efbbb79dc89132653d289d1d\"]";
+    // Marketing Module Xpath
+    // Case_2
+    public static final String shoppingCartPriceRulesLink = "//*[text()='Shopping Cart Price Rules']";
+    public static final String cart_addNewPriceRuleButton = "//*[@id=\"id_99953a4d12e54b4e6533346324137535\"]";
+    public static final String cart_ruleNameField = "//*[@id=\"rule_name\"]";
+    public static final String cart_descriptionField = "//*[@id=\"rule_description\"]";
+    public static final String cart_statusSelect = "//*[@id=\"rule_is_active\"]";
+    public static final String cart_websiteSelect = "//*[@id=\"rule_website_ids\"]";
+    public static final String cart_customerGroupsSelect = "//*[@id=\"rule_customer_group_ids\"]";
+    public static final String cart_couponSelect = "id=\"rule_coupon_type\"";
+    public static final String cart_usesPerCustomerField = "//*[@id=\"rule_uses_per_customer\"]";
+    public static final String cart_fromDateField = "//*[@id=\"rule_from_date\"]";
+    public static final String cart_toDateField = "id=\"rule_to_date\"";
+    public static final String cart_priorityField = "//*[@id=\"rule_sort_order\"]";
+    public static final String cart_publicInRSSFeesSelect = "//*[@id=\"rule_is_rss\"]";
+    public static final String cart_saveButon = "//*[@id=\"id_f3a542ca8898abba7be51bbee334a253\"]";
+    public static final String cart_resetButton = "//*[@id=\"id_f73194fa581706e6a647dec9adc9e8a5\"]";
+    public static final String cart_backButton = "//*[@id=\"id_7802c98b6469e1b0858855b8eae5dd01\"]";
+    public static final String cart_saveAndContinueEditButton = "//*[@id=\"id_d45375fc3a9931847bf59da0f1091b7d\"]";
+
 
 
 }
