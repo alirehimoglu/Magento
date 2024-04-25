@@ -1,4 +1,4 @@
-package utils;
+package magento.utils;
 
 import net.datafaker.providers.base.Marketing;
 

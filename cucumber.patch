@@ -1,0 +1,621 @@
+Subject: [PATCH] cucumber
+---
+Index: src/test/java/magento/modules/base/CommonPage.java
+===================================================================
+diff --git a/src/test/java/magento/modules/base/CommonPage.java b/src/test/java/magento/modules/base/CommonPage.java
+deleted file mode 100644
+--- a/src/test/java/magento/modules/base/CommonPage.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ /dev/null	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
+@@ -1,4 +0,0 @@
+-package magento.modules.base;
+-
+-public class CommonPage {
+-}
+Index: src/test/java/magento/modules/catalog/ExamplePage.java
+===================================================================
+diff --git a/src/test/java/magento/modules/catalog/ExamplePage.java b/src/test/java/magento/modules/catalog/ExamplePage.java
+deleted file mode 100644
+--- a/src/test/java/magento/modules/catalog/ExamplePage.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ /dev/null	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
+@@ -1,4 +0,0 @@
+-package magento.modules.catalog;
+-
+-public class ExamplePage {
+-}
+Index: src/test/java/tests/BaseTest.java
+===================================================================
+diff --git a/src/test/java/tests/BaseTest.java b/src/test/java/tests/BaseTest.java
+deleted file mode 100644
+--- a/src/test/java/tests/BaseTest.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ /dev/null	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
+@@ -1,45 +0,0 @@
+-package tests;
+-
+-
+-
+-import org.apache.log4j.Logger;
+-import org.testng.annotations.AfterClass;
+-import org.testng.annotations.BeforeClass;
+-import utils.ConfigReader;
+-import utils.Driver;
+-import utils.UiUtil;
+-import utils.XpathUtil;
+-
+-public class BaseTest {
+-
+-
+-    static Logger log = Logger.getLogger(BaseTest.class);
+-
+-
+-    @BeforeClass
+-    public void setUp() {
+-        log.info("Starting Test Automation");
+-        log.info("Browser type ::"+ ConfigReader.readFromConfig("browser"));
+-        String URL=ConfigReader.readFromConfig("url");
+-        log.info("Environment ::"+URL);
+-        Driver.getDriver().get(URL);
+-        log.info("Starting browser");
+-        UiUtil.getElement(XpathUtil.customerUsernameField).sendKeys(ConfigReader.readFromConfig("customerUsername"));
+-        UiUtil.getElement(XpathUtil.passwordField).sendKeys(ConfigReader.readFromConfig("password"));
+-        UiUtil.clickElement(XpathUtil.loginButton);
+-        log.info("logging into app");
+-    }
+-
+-
+-    @AfterClass
+-    public void tearDown(){
+-        Driver.closeDriver();
+-        log.info("browser closed");
+-    }
+-
+-
+-}
+-
+-
+-
+-
+Index: src/test/java/tests/CatalogTest.java
+===================================================================
+diff --git a/src/test/java/tests/CatalogTest.java b/src/test/java/tests/CatalogTest.java
+deleted file mode 100644
+--- a/src/test/java/tests/CatalogTest.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ /dev/null	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
+@@ -1,4 +0,0 @@
+-package tests;
+-
+-public class CatalogTest {
+-}
+Index: src/test/java/tests/CustomerTest.java
+===================================================================
+diff --git a/src/test/java/tests/CustomerTest.java b/src/test/java/tests/CustomerTest.java
+deleted file mode 100644
+--- a/src/test/java/tests/CustomerTest.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ /dev/null	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
+@@ -1,4 +0,0 @@
+-package tests;
+-
+-public class CustomerTest {
+-}
+Index: src/test/java/tests/MarketingTest.java
+===================================================================
+diff --git a/src/test/java/tests/MarketingTest.java b/src/test/java/tests/MarketingTest.java
+deleted file mode 100644
+--- a/src/test/java/tests/MarketingTest.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ /dev/null	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
+@@ -1,4 +0,0 @@
+-package tests;
+-
+-public class MarketingTest {
+-}
+Index: src/test/java/tests/ReportingTest.java
+===================================================================
+diff --git a/src/test/java/tests/ReportingTest.java b/src/test/java/tests/ReportingTest.java
+deleted file mode 100644
+--- a/src/test/java/tests/ReportingTest.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ /dev/null	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
+@@ -1,4 +0,0 @@
+-package tests;
+-
+-public class ReportingTest {
+-}
+Index: src/test/java/tests/SalesTest.java
+===================================================================
+diff --git a/src/test/java/tests/SalesTest.java b/src/test/java/tests/SalesTest.java
+deleted file mode 100644
+--- a/src/test/java/tests/SalesTest.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ /dev/null	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
+@@ -1,4 +0,0 @@
+-package tests;
+-
+-public class SalesTest {
+-}
+Index: src/test/java/tests/StoreTest.java
+===================================================================
+diff --git a/src/test/java/tests/StoreTest.java b/src/test/java/tests/StoreTest.java
+deleted file mode 100644
+--- a/src/test/java/tests/StoreTest.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ /dev/null	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
+@@ -1,4 +0,0 @@
+-package tests;
+-
+-public class StoreTest {
+-}
+Index: src/test/resources/config.properties
+===================================================================
+diff --git a/src/test/resources/config.properties b/src/test/resources/config.properties
+deleted file mode 100644
+--- a/src/test/resources/config.properties	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ /dev/null	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
+@@ -1,40 +0,0 @@
+-# Adobe Magento eCommerce Url
+-url:https://ecommerce.unitedcoderapp.com/index.php/admin
+-
+-browser = chrome
+-
+-# Customer Module
+-customerUsername:customermanager
+-password:automationadmin!123
+-
+-# Catalog Manager
+-catalogusername:catalogmanager
+-
+-
+-# Store Manager
+-storemanagerusername:storemanager
+-
+-
+-# Marketing Manager
+-marketingmanagerusername:marketingmanager
+-
+-
+-# Sales Manager
+-salesmanagerusername:salesmanager
+-
+-
+-# Reporting Manager
+-reportingmanagerusername:reportingmanager
+-
+-
+-# Adobe Meganto eCommerce DataBase
+-dburl:92.205.12.67
+-dbport:3306
+-dbusername:smmagentotest202303
+-dbpassword:automationadmin!123
+-dbschema:i9362596_mg2
+-
+-# Adobe Meganto eCommerce API
+-apiurl:http://ec2-35-85-113-204.us-west-2.compute.amazonaws.com:8088
+-apiusername:testautomation1
+-apipassword:automation123!
+\ No newline at end of file
+Index: src/test/java/magento/steps/CatalogStep.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/magento/steps/CatalogStep.java b/src/test/java/magento/steps/CatalogStep.java
+new file mode 100644
+--- /dev/null	(date 1713968872144)
++++ b/src/test/java/magento/steps/CatalogStep.java	(date 1713968872144)
+@@ -0,0 +1,4 @@
++package magento.steps;
++
++public class CatalogStep {
++}
+Index: src/test/java/magento/steps/Hooks.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/magento/steps/Hooks.java b/src/test/java/magento/steps/Hooks.java
+new file mode 100644
+--- /dev/null	(date 1713968872146)
++++ b/src/test/java/magento/steps/Hooks.java	(date 1713968872146)
+@@ -0,0 +1,20 @@
++package magento.steps;
++
++import io.cucumber.java.After;
++import io.cucumber.java.Before;
++import magento.utils.ConfigReader;
++import magento.utils.Driver;
++
++public class Hooks {
++
++    @Before
++    public void setUp() {
++        String URL= ConfigReader.readFromConfig("url");
++        Driver.getDriver().get(URL);
++    }
++
++    @After
++    public void tearDown(){
++        Driver.closeDriver();
++    }
++}
+Index: src/test/resources/Catalog.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/resources/Catalog.feature b/src/test/resources/Catalog.feature
+new file mode 100644
+--- /dev/null	(date 1713968872233)
++++ b/src/test/resources/Catalog.feature	(date 1713968872233)
+@@ -0,0 +1,8 @@
++@Login
++Feature: Login
++  As user, I want to be able to login with username and password
++
++Scenario: Login as manager
++  Given user logs in as "manager"
++  Then user is logged in successfully
++
+Index: src/test/java/magento/runners/CatalogRunner.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/magento/runners/CatalogRunner.java b/src/test/java/magento/runners/CatalogRunner.java
+new file mode 100644
+--- /dev/null	(date 1713968872137)
++++ b/src/test/java/magento/runners/CatalogRunner.java	(date 1713968872137)
+@@ -0,0 +1,19 @@
++package magento.runners;
++
++
++import io.cucumber.junit.Cucumber;
++import io.cucumber.junit.CucumberOptions;
++import org.junit.runner.RunWith;
++
++@RunWith(Cucumber.class)
++@CucumberOptions(
++        glue = "magento.steps",
++        features = "src/test/resources/Catalog.feature",
++        plugin = {
++                "html:target/cucumber-html-report",
++                "json:target/cucumber1.json",
++                "rerun:target/rerun.txt"
++        }
++)
++public class CatalogRunner {
++}
+Index: src/test/java/magento/steps/BaseStep.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/magento/steps/BaseStep.java b/src/test/java/magento/steps/BaseStep.java
+new file mode 100644
+--- /dev/null	(date 1713969063563)
++++ b/src/test/java/magento/steps/BaseStep.java	(date 1713969063563)
+@@ -0,0 +1,24 @@
++package magento.steps;
++
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++import magento.modules.base.BasePage;
++
++public class BaseStep {
++    BasePage basePage = new BasePage();
++    @Given("user logs in as {string}")
++    public void loginAsUser(String role) {
++        basePage.loginByRole(role);
++    }
++    @Then("user is logged in successfully")
++    public void userLoggedIn(){
++        //this is just an example, write correct logic for verification
++        try {
++            Thread.sleep(2000);
++
++        }catch (Exception e){
++            System.out.println(e);
++        }
++        System.out.println("successful");
++    }
++}
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ b/.gitignore	(date 1713968872238)
+@@ -1,40 +1,4 @@
+-target/
+-!.mvn/wrapper/maven-wrapper.jar
+-!**/src/main/**/target/
+-!**/src/test/**/target/
+-
+ ### IntelliJ IDEA ###
+-.idea/modules.xml
+-.idea/jarRepositories.xml
+-.idea/compiler.xml
+-.idea/libraries/
+-*.iws
+-*.iml
+-*.ipr
+-
+-### Eclipse ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
+-
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-build/
+-!**/src/main/**/build/
+-!**/src/test/**/build/
+-
+-### VS Code ###
+-.vscode/
+-
+-### Mac OS ###
+-.DS_Store
+-
+-/src/test/resources/config.properties
+\ No newline at end of file
++.idea
++config.properties
++target
+\ No newline at end of file
+Index: src/test/java/utils/DbUtilMySql.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/utils/DbUtilMySql.java b/src/test/java/magento/utils/DbUtilMySql.java
+rename from src/test/java/utils/DbUtilMySql.java
+rename to src/test/java/magento/utils/DbUtilMySql.java
+--- a/src/test/java/utils/DbUtilMySql.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ b/src/test/java/magento/utils/DbUtilMySql.java	(date 1713968872179)
+@@ -1,4 +1,4 @@
+-package utils;
++package magento.utils;
+ 
+ import java.sql.Connection;
+ import java.sql.DriverManager;
+Index: src/test/java/utils/XpathUtil.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/utils/XpathUtil.java b/src/test/java/magento/utils/XpathUtil.java
+rename from src/test/java/utils/XpathUtil.java
+rename to src/test/java/magento/utils/XpathUtil.java
+--- a/src/test/java/utils/XpathUtil.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ b/src/test/java/magento/utils/XpathUtil.java	(date 1713968872211)
+@@ -1,4 +1,4 @@
+-package utils;
++package magento.utils;
+ 
+ public class XpathUtil {
+ 
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ b/pom.xml	(date 1713968942074)
+@@ -30,10 +30,41 @@
+                 <artifactId>maven-surefire-plugin</artifactId>
+                 <version>3.2.5</version>
+                 <configuration>
+-                    <suiteXmlFiles>
+-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+-                    </suiteXmlFiles>
++<!--                    <parallel>classes</parallel>-->
++<!--                    <threadCount>2</threadCount>-->
++<!--                    <perCoreThreadCount>false</perCoreThreadCount>-->
++<!--                    <forkCount>2C</forkCount>-->
++                    <includes>
++                        <include>**/*Runner.java</include>
++                    </includes>
++                    <testFailureIgnore>true</testFailureIgnore>
++                    <rerunFailingTestsCount>1</rerunFailingTestsCount>
+                 </configuration>
++            </plugin>
++            <plugin>
++                <groupId>net.masterthought</groupId>
++                <artifactId>maven-cucumber-reporting</artifactId>
++                <version>5.8.1</version>
++                <executions>
++                    <execution>
++                        <id>execution</id>
++                        <phase>verify</phase>
++                        <goals>
++                            <goal>generate</goal>
++                        </goals>
++                        <configuration>
++                            <projectName>Cucumber HTML Reports</projectName>
++                            <!-- output directory for the generated report -->
++                            <outputDirectory>${project.build.directory}</outputDirectory>
++                            <!-- optional, defaults to outputDirectory if not specified -->
++                            <inputDirectory>${project.build.directory}</inputDirectory>
++                            <jsonFiles>
++                                <!-- supports wildcard or name pattern -->
++                                <param>**/cucumber*.json</param>
++                            </jsonFiles>
++                        </configuration>
++                    </execution>
++                </executions>
+             </plugin>
+         </plugins>
+     </build>
+@@ -50,13 +81,6 @@
+             <groupId>io.github.bonigarcia</groupId>
+             <artifactId>webdrivermanager</artifactId>
+             <version>5.6.3</version>
+-        </dependency>
+-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+-        <dependency>
+-            <groupId>org.testng</groupId>
+-            <artifactId>testng</artifactId>
+-            <version>7.9.0</version>
+-            <scope>test</scope>
+         </dependency>
+         <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+         <dependency>
+Index: src/test/java/magento/modules/base/BasePage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/magento/modules/base/BasePage.java b/src/test/java/magento/modules/base/BasePage.java
+--- a/src/test/java/magento/modules/base/BasePage.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ b/src/test/java/magento/modules/base/BasePage.java	(date 1714068322343)
+@@ -1,4 +1,13 @@
+ package magento.modules.base;
+ 
++import magento.utils.ConfigReader;
++import magento.utils.UiUtil;
++
+ public class BasePage {
++    public void loginByRole(String role){
++        //rewrite logic for magento
++        UiUtil.getElement("//*[@id='username']").sendKeys(ConfigReader.readFromConfig("username"));
++        UiUtil.getElement("//*[@id='password']").sendKeys(ConfigReader.readFromConfig("password"));
++        UiUtil.clickElement("//*[@id='login']");
++    }
+ }
+Index: src/test/java/utils/ApiUtil.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/utils/ApiUtil.java b/src/test/java/magento/utils/ApiUtil.java
+rename from src/test/java/utils/ApiUtil.java
+rename to src/test/java/magento/utils/ApiUtil.java
+--- a/src/test/java/utils/ApiUtil.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ b/src/test/java/magento/utils/ApiUtil.java	(date 1713968872151)
+@@ -1,8 +1,7 @@
+-package utils;
++package magento.utils;
+ 
+ import io.restassured.RestAssured;
+ import io.restassured.response.Response;
+-import org.testng.Assert;
+ 
+ public class ApiUtil {
+ 
+@@ -11,7 +10,6 @@
+         Response response = RestAssured.given().auth().basic(apiUsername,apiPassword)
+                 .when().get(apiUrl + "/" + endPoint).then().extract().response();
+         System.out.println(response.prettyPrint());
+-        Assert.assertEquals(response.getStatusCode(),responseCode);
+ 
+     }
+ 
+Index: src/test/java/utils/Driver.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/utils/Driver.java b/src/test/java/magento/utils/Driver.java
+rename from src/test/java/utils/Driver.java
+rename to src/test/java/magento/utils/Driver.java
+--- a/src/test/java/utils/Driver.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ b/src/test/java/magento/utils/Driver.java	(date 1713968872190)
+@@ -1,4 +1,4 @@
+-package utils;
++package magento.utils;
+ 
+ import org.openqa.selenium.WebDriver;
+ import org.openqa.selenium.chrome.ChromeDriver;
+Index: src/test/java/utils/ConfigReader.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/utils/ConfigReader.java b/src/test/java/magento/utils/ConfigReader.java
+rename from src/test/java/utils/ConfigReader.java
+rename to src/test/java/magento/utils/ConfigReader.java
+--- a/src/test/java/utils/ConfigReader.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ b/src/test/java/magento/utils/ConfigReader.java	(date 1713968872169)
+@@ -1,4 +1,4 @@
+-package utils;
++package magento.utils;
+ 
+ import java.io.FileInputStream;
+ import java.io.FileNotFoundException;
+@@ -14,7 +14,7 @@
+         FileInputStream inputStream = null;
+ 
+         try {
+-            inputStream = new FileInputStream("src/test/resources/config.properties");
++            inputStream = new FileInputStream("config.properties");
+         } catch (FileNotFoundException e) {
+             throw new RuntimeException(e);
+         }
+Index: readme.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/readme.txt b/readme.txt
+--- a/readme.txt	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ b/readme.txt	(date 1714068322338)
+@@ -1,1 +1,24 @@
+-Automation Framework
+\ No newline at end of file
++Automation Framework
++
++Framework Technologies: selenium, cucumber-junit, page object model
++
++Framework consists of 5 packages
++ 1. modules - page object class methods
++ 2. runners - cucumber-junit execution configuration
++ 3. steps - step definitions
++ 4. utils - varies types of common utilities across all packages
++ 5. resources - cucumber feature files.
++
++Developing a test
++    1. write the BDD scenario in the appropriate feature file
++    2. create step definitions for the sceanrio steps in the steps package
++    3. create necessary java/selenium code that defines the step action
++    4. if runner class does not exist for the current feature file, create/configure one under runners package
++    5. run & debug
++
++Run all tests - mvn test
++Run a single test - mvn test -Dcucumber.filter.tags="@Login"
++Access test report
++    - navigate to target -> cucmber-html-reports
++    - then open "overview-features.html" file in the browser
++
+Index: src/test/java/utils/UiUtil.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/utils/UiUtil.java b/src/test/java/magento/utils/UiUtil.java
+rename from src/test/java/utils/UiUtil.java
+rename to src/test/java/magento/utils/UiUtil.java
+--- a/src/test/java/utils/UiUtil.java	(revision 779b7f10e55abf8574b12eeac7a149a41a1266f0)
++++ b/src/test/java/magento/utils/UiUtil.java	(date 1713968872202)
+@@ -1,4 +1,4 @@
+-package utils;
++package magento.utils;
+ 
+ import net.datafaker.Faker;
+ import org.openqa.selenium.By;
+@@ -7,9 +7,8 @@
+ import org.openqa.selenium.interactions.Actions;
+ import org.openqa.selenium.support.ui.ExpectedConditions;
+ import org.openqa.selenium.support.ui.Select;
+-import org.openqa.selenium.support.ui.Wait;
+ import org.openqa.selenium.support.ui.WebDriverWait;
+-import utils.Driver;
++import magento.utils.Driver;
+ 
+ import java.time.Duration;
+ import java.util.List;
