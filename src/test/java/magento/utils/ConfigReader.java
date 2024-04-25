@@ -1,4 +1,4 @@
-package utils;
+package magento.utils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,7 +14,7 @@ public class ConfigReader {
         FileInputStream inputStream = null;
 
         try {
-            inputStream = new FileInputStream("src/test/resources/config.properties");
+            inputStream = new FileInputStream("C:\\Users\\alfir\\MagentoTeam\\config.properties");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

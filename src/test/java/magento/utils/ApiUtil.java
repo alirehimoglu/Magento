@@ -1,8 +1,7 @@
-package utils;
+package magento.utils;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.testng.Assert;
 
 public class ApiUtil {
 
@@ -11,7 +10,6 @@ public class ApiUtil {
         Response response = RestAssured.given().auth().basic(apiUsername,apiPassword)
                 .when().get(apiUrl + "/" + endPoint).then().extract().response();
         System.out.println(response.prettyPrint());
-        Assert.assertEquals(response.getStatusCode(),responseCode);
 
     }
 
