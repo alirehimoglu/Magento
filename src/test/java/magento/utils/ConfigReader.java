@@ -14,7 +14,7 @@ public class ConfigReader {
         FileInputStream inputStream = null;
 
         try {
-            inputStream = new FileInputStream("C:\\Users\\alfir\\MagentoTeam\\config.properties");
+            inputStream = new FileInputStream("config.properties");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
